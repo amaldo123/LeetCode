@@ -1,0 +1,18 @@
+class Solution:
+    def threeSum(self, nums) -> list:
+        result = []
+        n = len(nums)
+        seen = set() 
+        for i in range(n):
+          for j in range(i+1, n):
+              for k in range(j+1, n):
+                  if nums[i] + nums[j] + nums[k] == 0:
+                    final = sorted([nums[i], nums[j], nums[k]])
+                    
+                    triplet = tuple(final)
+                    if triplet not in seen:
+                        seen.add(triplet)
+                        result.append(final)
+                      
+        return result
+                
